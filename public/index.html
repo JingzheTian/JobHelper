@@ -1,0 +1,47 @@
+<!doctype html>
+<html ng-app="app">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Job Application</title>
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+	<!-- JQuery -->
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<!-- Bootstrap -->
+	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<!-- AngularJS -->
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+	<script>
+		angular.module("app",["customFilters"]);
+	</script>
+	<!-- Ctrl & Validation -->
+	<script type="text/javascript" src="controller/app-controller.js"></script>
+	<script type="text/javascript" src="filter/customFilters.js"></script>
+
+	<style>
+		.odd{background-color: lightcoral}
+		.even{background-color: lavenderblush}
+	</style>	
+	<!-- OwnStyle -->
+
+	<link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+	<div class="container-fluid" ng-controller="appCtrl">
+		<app-login></app-login>
+		<app-header></app-header>
+		<div class="row" id="content">
+			<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2" id="left-space"></div>
+			<app-body></app-body>	
+			<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2" id="right-space"></div>
+		</div>                        
+		<app-bottom></app-bottom>
+	</div>
+
+
+</body>
+</html>
