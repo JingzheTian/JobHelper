@@ -1,0 +1,13 @@
+<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2" id="right-space" ng-show="bodyShow">
+		  <form class="form-horizontal" role="form">
+		    <div class="form-group">
+		      <label class="col-sm-12">Postions in total</label>
+		      <label class="col-sm-12">{{items.length}}</label>
+		    </div>
+		    <div class="form-group" ng-repeat="item in statistic">
+		      <label class="col-sm-12">{{item.position}}</label>
+		      <label class="col-sm-12">{{item.total}}</label>
+		    </div>
+		  </form>
+
+</div>

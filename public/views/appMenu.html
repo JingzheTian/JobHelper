@@ -1,0 +1,27 @@
+<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2" id="left-space">
+	<div>
+		<form class="form-horizontal" role="form">
+		    <div class="form-group">
+		      <label class="col-sm-12">CompanyName</label>
+		      <div class="col-sm-12">
+		        <input type="text" class="form-control" ng-model="item.cname"  placeholder="CompanyName">
+		      </div>
+		    </div>
+		    <div class="form-group">
+		      <label class="col-sm-12">Position</label>
+		      <div class="col-sm-12">
+		        <input type="text" class="form-control" ng-model="item.cposition" placeholder="Position">
+		      </div>
+		    </div>
+		    <div class="form-group">        
+		      <input class ="btn btn-primary btn-block" type="button" value="Add" ng-click="addItems()" ng-disabled="add" ng-model="add">
+		    </div>
+		    <div class="form-group">        
+		      <input class ="btn btn-primary btn-block" type="button" value="Update"  ng-click="updateItem()">
+		    </div>
+		    <div class="form-group">        
+		      <input class ="btn btn-primary btn-block" type="button" value="Clear" ng-click="clear()">
+		    </div>
+		  </form>
+     </div>
+</div>

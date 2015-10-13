@@ -20,8 +20,7 @@ angular.module("customFilters", [])
     }
 })
 .filter("range", function ($filter) {
-    return function (data, page, size) {
-        console.log(page + " " + size);       
+    return function (data, page, size) {       
         if (angular.isArray(data) && angular.isNumber(page) && angular.isNumber(size)) {
             var start_index = (page - 1) * size;;
             rdata = [];

@@ -6,11 +6,29 @@ angular.module("app")
         $scope.bodyShow = false;
         $scope.userName= "";
 
+        var statistic = function(){
+            $scope.statistic = [];
+            var sta = {}
+            for (var i = 0; i < $scope.items.length; i++) {
+                if(sta.hasOwnProperty($scope.items[i].cposition)){
+                    sta[$scope.items[i].cposition]++;
+                }else{
+                    sta[$scope.items[i].cposition] = 1;
+                }
+            }
+            for (var key in sta){
+                var category = { "position" : key,
+                                 "total" : sta[key]};
+                $scope.statistic.push(category);
+            }
+            console.log($scope.statistic);            
+        }
 
         var refresh = function(){
             $http.get("/jobList/" + $scope.userName).success(function(response){
             //console.log(response);
             $scope.items = response;
+            statistic();
             });
         }
         
@@ -107,6 +125,18 @@ angular.module("app")
         return{
             restrict: 'E',
             templateUrl: 'views/appBody.html'
+        };
+})
+.directive('appMenu', function(){
+        return{
+            restrict: 'E',
+            templateUrl: 'views/appMenu.html'
+        };
+})
+.directive('appSummary', function(){
+        return{
+            restrict: 'E',
+            templateUrl: 'views/appSummary.html'
         };
 })
 .directive('appLogin', function(){
